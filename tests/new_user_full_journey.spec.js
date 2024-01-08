@@ -9,7 +9,7 @@ import { DeliveryDetails } from "../page-objects/DeliveryDetails.js"
 import { deliveryDetails as userAddress } from "../data/deliveryDetails.js"
 import { PaymentPage } from "../page-objects/PaymentPage.js"
 
-test.only("New user full end-to-end test journey", async ({ page }) =>{
+test("New user full end-to-end test journey", async ({ page }) =>{
 	const productsPage = new ProductsPage(page)
 	await productsPage.visit()
 	await productsPage.sortByCheapest()
