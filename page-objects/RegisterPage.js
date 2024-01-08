@@ -7,14 +7,12 @@ export class RegisterPage {
 		this.registerButton = page.getByRole('button', { name: 'register'})
 	}
 
-	signUpAsNewUser = async () => {
-		await this.page.pause()
-
+	signUpAsNewUser = async (email, password) => {
 		await this.emailInput.waitFor()
-		await this.emailInput.fill("testymctesterson@testers.com")
+		await this.emailInput.fill(email)
 
 		await this.passwordInput.waitFor()
-		await this.passwordInput.fill("supersecretpassword")
+		await this.passwordInput.fill(password)
 
 		await this.registerButton.waitFor()
 		await this.registerButton.click()
